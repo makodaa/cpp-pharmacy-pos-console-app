@@ -4,6 +4,8 @@
 using namespace std;
 
 int main() {
-  cout<<"This is a test\n";
-  return 0;
+    cout <<"This is a test\n";
+    cout << "Hello, world!";
+
+    return 0;
 }

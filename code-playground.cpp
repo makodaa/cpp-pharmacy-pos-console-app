@@ -10,6 +10,3 @@ int main(int argc, char const *argv[])
     cout << "Local date and time is: " << dt <<endl;
     return 0;
 }
-
-
-owowowo

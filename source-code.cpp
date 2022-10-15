@@ -52,7 +52,7 @@ int main(int argc, char const *argv[]) {
         system("cls");
 
         if (age >= 60 && age <= 80) {
-            cout << "Approved for senior citizen discount! Enjoy your 7% discount!";
+            cout << "\n Approved for senior citizen discount! Enjoy your 7% discount!";
             isSenior = true;
         }
 
@@ -61,8 +61,26 @@ int main(int argc, char const *argv[]) {
         cout << "Please select your desired service\n";
         cout << "[1] Medicine\t\t\t[2] Vitamins & Supplements\n";
         cout << "[3] First Aid Equipment \t[4] Exit\n\n";
+                                    ///cart
+        cout<<"You currently have\n";
+            ///MEDICINE!!!
+            ///medicine analgesics cart
+        if (AAAqty) {cout<<AAAqty<<" Acetylsalicylic Acid (Aspirin)\n";}
+        if (AABqty) {cout<<AABqty<<" Ibuprofen\n";}
+        if (AACqty) {cout<<AACqty<<" Naproxen Sodium\n"; }
+            ///medicine antibiotics cart
+        if (ABAqty) {cout<<ABAqty<<" Amoxicillin\n";}
+        if (ABBqty) {cout<<ABBqty<<" Ampicillin\n";}
+        if (ABCqty) {cout<<ABCqty<<" Azithromycin\n";}   
+            ///medicine antihistamines cart
+        if (ACAqty) {cout<<ACAqty<<" Cetirizine\n";}
+        if (ACBqty) {cout<<ACBqty<<" Diphenhydramine\n";}
+        if (ACCqty) {cout<<ACCqty<<" Loratadine\n";}
+    cout<<"in your cart!\n";
+        /// end of cart
         cin >> selection;
-        
+                                
+                
         switch (selection) {
             case 1: // Medicine Selection
                 do {
@@ -73,7 +91,7 @@ int main(int argc, char const *argv[]) {
                     cout << "[1] Analgesics\t\t[2] Antibiotics\n";
                     cout << "[3] Antihistamines \t [4] Back\n";
                     cin >> secondarySelection;
-
+                    
                     system ("cls");
 
                     switch (secondarySelection) {
@@ -93,25 +111,22 @@ int main(int argc, char const *argv[]) {
                                         cout << "How many tablets: ";
                                         cin >> AAAqty;
                                         firstOperation = false;
-
                                         break;
                                     case 2:
                                         cout << "How many tablets: ";
                                         cin >> AABqty;             
                                         firstOperation = false; 
-
                                         break;
                                     case 3:
                                         cout << "How many tablets: ";
                                         cin >> AACqty;
                                         firstOperation = false;
-
                                         break;
                                     default:
                                         break;
                                     }
                             } while (tertiarySelection <= 3);
-                            
+
                             break;
                         case 2: // Antibiotic Selection
                             do {
@@ -187,21 +202,25 @@ int main(int argc, char const *argv[]) {
                                     default:
                                         break;
                                 }
-                                
 
                             } while (tertiarySelection <= 3);
+
                             break;
                         default:
                             system("cls");
                             break;
                         }
+
                 } while (secondarySelection<=3);
-                
+
                     break;
                 default:
                     break;
+        
         }
+           
     } while (selection <= 3);
+    
 
     //exit condition
     if (!firstOperation) {
@@ -273,4 +292,5 @@ int main(int argc, char const *argv[]) {
     }
     else
     cout << "Thank you for your purchase at Uncle Andy's Pharmacy!";
+    cout<< "\n";
 }

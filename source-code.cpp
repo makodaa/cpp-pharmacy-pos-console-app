@@ -21,6 +21,15 @@ int main(int argc, char const *argv[]) {
     float ACAqty = 0;
     float ACBqty = 0;
     float ACCqty = 0;
+    float BAAqty = 0;
+    float BABqty = 0;
+    float BACqty = 0;
+    float BBAqty = 0;
+    float BBBqty = 0;
+    float BBCqty = 0;
+    float BCAqty = 0;
+    float BCBqty = 0;
+    float BCCqty = 0;
     time_t now = time(0);
     char* dt = ctime(&now);
     cout << "====================================================\n\n";
@@ -61,7 +70,8 @@ int main(int argc, char const *argv[]) {
         cout << "Please select your desired service\n";
         cout << "[1] Medicine\t\t\t[2] Vitamins & Supplements\n";
         cout << "[3] First Aid Equipment \t[4] Exit\n\n";
-        cin >> selection;
+        cout << "===============================================\n";
+        cout << "Enter Number (1-4): "; cin >> selection;
         
         switch (selection) {
             case 1: // Medicine Selection
@@ -72,7 +82,8 @@ int main(int argc, char const *argv[]) {
                     cout << "Select Category:\n";
                     cout << "[1] Analgesics\t\t[2] Antibiotics\n";
                     cout << "[3] Antihistamines \t [4] Back\n";
-                    cin >> secondarySelection;
+                    cout << "===============================================\n";
+                    cout << "Enter Number (1-4): ";cin >> secondarySelection;
 
                     system ("cls");
 
@@ -86,7 +97,8 @@ int main(int argc, char const *argv[]) {
                                 cout << "[2] Ibuprofen\t\t\t\tPhp. 8.70\n";
                                 cout << "[3] Naproxen Sodium\t\t\tPhp. 20.25\n";
                                 cout << "[4] Back\n";
-                                cin >> tertiarySelection;
+                                cout << "===============================================\n";
+                                cout << "Enter Number (1-4): ";cin >> tertiarySelection;
 
                                 switch (tertiarySelection) {
                                     case 1:
@@ -123,7 +135,8 @@ int main(int argc, char const *argv[]) {
                                 cout << "[2] Ampicillin\t\t\tPhp. 23.50\n";
                                 cout << "[3] Azithromycin\t\t\tPhp. 88.75\n";
                                 cout << "[4] Back\n";
-                                cin >> tertiarySelection;
+                                cout << "===============================================\n";
+                                cout << "Enter Number (1-4): ";cin >> tertiarySelection;
 
                                 switch (tertiarySelection)
                                 {
@@ -163,7 +176,8 @@ int main(int argc, char const *argv[]) {
                                 cout << "[2] Diphenhydramine\t\t Php. 8.75\n";
                                 cout << "[3] Loratadine\t\t\t Php. 20.50\n";
                                 cout << "[4] Back\n";
-                                cin >> tertiarySelection;
+                                cout << "===============================================\n";
+                                cout << "Enter Number (1-4): ";cin >> tertiarySelection;
 
                                 switch (tertiarySelection) {
                                     case 1:
@@ -198,6 +212,145 @@ int main(int argc, char const *argv[]) {
                 } while (secondarySelection<=3);
                 
                     break;
+
+            case 2: // Vitamins & Supplements Selection
+                                do {
+                    system("cls");
+
+                    cout << "\nMedicine\n";
+                    cout << "Select Category:\n";
+                    cout << "[1] Vitamins\t\t\t [2] Food & Dietary Supplements\n";
+                    cout << "[3] Mineral Supplements \t [4] Back\n";
+                    cout << "===============================================\n";
+                    cout << "Enter Number (1-4): ";cin >> secondarySelection;
+
+                    system ("cls");
+
+                    switch (secondarySelection) {
+                        case 1: // Vitamins Section
+                            do {
+                                system("cls");
+                                cout << "\nVitamins\n";
+                                cout << "Select Vitamins:\n";
+                                cout << "[1] Ascorbic Acid(Vitamin C)\t\tPhp. 3.50\n";
+                                cout << "[2] Vitamin B - Complex\t\t\tPhp. 8.70\n";
+                                cout << "[3] Cholecalciferol (Vitamin D3)\tPhp. 20.25\n";
+                                cout << "[4] Back\n";
+                                cout << "===============================================\n";
+                                cout << "Enter Number (1-4): ";cin >> tertiarySelection;
+
+                                switch (tertiarySelection) {
+                                    case 1:
+                                        cout << "How many tablets: ";
+                                        cin >> BAAqty;
+                                        firstOperation = false;
+
+                                        break;
+                                    case 2:
+                                        cout << "How many tablets: ";
+                                        cin >> BBAqty;             
+                                        firstOperation = false; 
+
+                                        break;
+                                    case 3:
+                                        cout << "How many tablets: ";
+                                        cin >> BACqty;
+                                        firstOperation = false;
+
+                                        break;
+                                    default:
+                                        break;
+                                    }
+                            } while (tertiarySelection <= 3);
+                            
+                            break;
+                        case 2: // Food & Dietary Supplements Section
+                            do {
+                                system("cls");
+
+                                cout << "\nFood & Dietary Supplements\n";
+                                cout << "Select Food & Dietary Supplements:\n";
+                                cout << "[1] Multivitamin + Mineral + Folic + Zinc\tPhp. 18.75\n";
+                                cout << "[2] Triple Magnesium Complex\t\t\tPhp. 23.50\n";
+                                cout << "[3] Collagen\t\t\t\t\tPhp. 88.75\n";
+                                cout << "[4] Back\n";
+                                cout << "===============================================\n";
+                                cout << "Enter Number (1-4): ";cin >> tertiarySelection;
+
+                                switch (tertiarySelection)
+                                {
+                                    case 1:
+                                        cout << "How many tablets: ";
+                                        cin >> BABqty;
+                                        firstOperation = false; 
+
+                                        break;
+                                    case 2:
+                                        cout << "How many tablets: ";
+                                        cin >> BBBqty;
+                                        firstOperation = false; 
+
+                                        break;
+                                    case 3:
+                                        cout << "How many tablets: ";
+                                        cin >> BBCqty;
+                                        firstOperation = false; 
+
+                                        break;
+                                    default:
+                                        break;
+                                }
+
+                            }
+                            while (tertiarySelection<=3);
+
+                            break;
+                        case 3: // Antihistamines Selection
+                            do {
+                                system("cls");
+
+                                cout << "\nMineral Supplements\n";
+                                cout << "Select Mineral Supplements\n";
+                                cout << "[1] Calcium\t\t\tPhp. 15.00\n";
+                                cout << "[2] Magnesium\t\t\tPhp. 8.75\n";
+                                cout << "[3] Zinc\t\t\tPhp. 20.50\n";
+                                cout << "[4] Back\n";
+                                cout << "===============================================\n";
+                                cout << "Enter Number (1-4): ";cin >> tertiarySelection;
+
+                                switch (tertiarySelection) {
+                                    case 1:
+                                        cout << "How many tablets: ";
+                                        cin >> BCAqty;
+                                        firstOperation = false; 
+
+                                        break;
+                                    case 2:
+                                        cout << "How many tablets: ";
+                                        cin >> BCBqty;
+                                        firstOperation = false; 
+
+                                        break;
+                                    case 3:
+                                        cout << "How many tablets: ";
+                                        cin >> BCCqty;
+                                        firstOperation = false; 
+
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                
+
+                            } while (tertiarySelection <= 3);
+                            break;
+                        default:
+                            system("cls");
+                            break;
+                        }
+                } while (secondarySelection<=3);
+
+                
                 default:
                     break;
         }
@@ -205,7 +358,7 @@ int main(int argc, char const *argv[]) {
 
     //exit condition
     if (!firstOperation) {
-        total = (3.50 * AAAqty) + (8.70 * AABqty) + (20.25 * AACqty) + (18.75 * ABAqty) + (23.50 * ABBqty) + (88.73 * ABCqty) + (15.00 * ACAqty) + (8.75 * ACBqty) + (20.50 * ACCqty);
+        total = (3.50 * AAAqty) + (8.70 * AABqty) + (20.25 * AACqty) + (18.75 * ABAqty) + (23.50 * ABBqty) + (88.73 * ABCqty) + (15.00 * ACAqty) + (8.75 * ACBqty) + (20.50 * ACCqty) + (2.00 * BAAqty) + (6.00 * BBAqty) + (5.00 * BACqty) + (10.00 * BBAqty) + (12.00 * BBBqty) + (18.50 * BBCqty) + (6.00 * BCAqty) + (60.00 * BCBqty) + (7.00 * BCCqty);
         cout << "TECHNOLOGICAL INSTITUTE OF THE PHILIPPINES\n";
         cout << "Review of Purchase:\n\n";
         cout << "Customer Name: " <<name<<"\n";
@@ -246,14 +399,51 @@ int main(int argc, char const *argv[]) {
         if (ACCqty) {
             cout << "Loratadine\t\t\t\t" << ACCqty<< "\t\t" << ACCqty * 20.50 << "\n";
         }
-        
+
+        // Vitamins & Supplements Vitamins
+
+        if (BAAqty) {
+            cout << "Ascorbic Acid (Vitamin C)\t\t" << BAAqty<< "\t\t" << BAAqty * 2.00 << "\n";
+        }
+        if (BABqty) {
+            cout << "Vitamin B - Complex\t\t\t" << BABqty<< "\t\t" << BABqty * 6.00 << "\n";
+        }
+        if (BACqty) {
+            cout << "Cholecalciferol (Vitamin D3)\t\t" << BACqty<< "\t\t" << BACqty * 5.00 << "\n";
+        }
+
+        // Vitamins & Supplements Food & Dietary Supplements
+
+        if (BBAqty) {
+            cout << "Multivitamin + Mineral + Folic + Zinc\t" << BBAqty<< "\t\t" << BBAqty * 10.00 << "\n";
+        }
+        if (BBBqty) {
+            cout << "Triple Magnesium Complex\t\t" << BBBqty<< "\t\t" << BBBqty * 12.00 << "\n";
+        }
+        if (BBCqty) {
+            cout << "Collagen\t\t\t\t" << BBCqty<< "\t\t" << BBCqty * 18.50 << "\n";
+        }
+
+        // Vitamins & Supplements Mineral Supplements
+
+        if (BCAqty) {
+            cout << "Calcium\t\t\t\t\t" << BCAqty<< "\t\t" << BCAqty * 6.00 << "\n";
+        }
+        if (BCBqty) {
+            cout << "Magnesium\t\t\t\t" << BCBqty<< "\t\t" << BCBqty * 60.00 << "\n";
+        }
+        if (BCCqty) {
+            cout << "Zinc\t\t\t\t\t" << BCCqty<< "\t\t" << BCCqty * 7.00 << "\n";
+        }
+
+
         cout << "=====================================================================\n";
         cout << "Total: " << "\t\t\t\t\t" << total;
 
         if (isSenior) {
             total = total - (total * discount);
 
-            cout << " -7% = " << total;
+            cout << " -07% = " << total;
         }
 
         cout << "\n=====================================================================\n";
@@ -274,3 +464,4 @@ int main(int argc, char const *argv[]) {
     else
     cout << "Thank you for your purchase at Uncle Andy's Pharmacy!";
 }
+}€ku€ku€ku€ku€ku€ku€kd€kd€kd€kd€kd€kd€ku€ku€ku€ku€ku€ku€kd€kd€kd€ku€ku€ku€kd€kd€kd€ku€ku€ku:qa

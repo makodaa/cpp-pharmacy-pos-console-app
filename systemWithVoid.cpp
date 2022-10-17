@@ -74,7 +74,7 @@ int main(int argc, char const *argv[]) {
         cout << "=====================================================================\n";
         //instructions
         if (firstOperation) {
-        cout << "Instructions: Pay attention to the interface and options displayed. \nSelect the category or product of your choice and\nenter in the number beside it into the system\n";
+        cout << "Instructions: Pay attention to the interface and options displayed. \nSelect the category or product of your choice and enter in the\n number beside it into the space provided\n";
         cout << "=====================================================================\n";
         }   
         else { 
@@ -203,6 +203,11 @@ int main(int argc, char const *argv[]) {
         cout << "=====================================================================\n";
         }
         //lower half system - service options
+        if (AAAqty >= 1 || AABqty >= 1 || AACqty >= 1 || ABAqty >= 1 || ABBqty >= 1 || ABCqty >= 1 || ACAqty >= 1 || ACBqty >= 1 || ACCqty >= 1 || BAAqty >= 1 || BABqty >= 1 || BACqty >= 1 || BBAqty >= 1 || BBBqty >= 1 || BBCqty >= 1 || BCAqty >= 1 || BCBqty >= 1 || BCCqty >= 1 || CAAqty >= 1 || CABqty >= 1 || CACqty >= 1 || CBAqty >= 1 || CBBqty >= 1 || CBCqty >= 1 || CCAqty >= 1 || CCBqty >= 1 || CCCqty >= 1)
+        {
+            cout << "[0] Void Item\n";
+        }
+        
         cout << "[1] Medicine\n\n";
         cout << "[2] Vitamins & Supplements\n\n";
         cout << "[3] First Aid Equipment \n\n";
@@ -220,6 +225,88 @@ int main(int argc, char const *argv[]) {
         cin >> selection;
         
         switch (selection) {
+            case 0: //void item system
+        if (AAAqty) {
+            cout << "[1] Acetylsalicylic Acid (Aspirin)\n";
+        }
+        if (AABqty) {
+            cout << "[2] Ibuprofen\n";
+        }
+        if (AACqty) {
+            cout << "[3] Naproxen Sodium\n";
+        }
+        if (ABAqty) {
+            cout << "[4] Amoxicillin\n";
+        }
+        if (ABBqty) {
+            cout << "[5] Ampicillin\n";
+        }
+        if (ABCqty) {
+            cout << "[6] Azithromycin\n";
+        }
+        if (ACAqty) {
+            cout << "[7] Cetirizine\n";
+        }
+        if (ACBqty) {
+            cout << "[8] Diphenhydramine\n";
+        }
+        if (ACCqty) {
+            cout << "[9] Loratadine\n";
+        }
+        if (BAAqty) {
+            cout << " 10]Ascorbic Acid (Vitamin C)\n";
+        }
+        if (BABqty) {
+            cout << "[11] Vitamin B - Complex\n";
+        }
+        if (BACqty) {
+            cout << "[12] Cholecalciferol (Vitamin D3)\n";
+        }
+        if (BBAqty) {
+            cout << "[13] Multivitamin + Mineral + Folic + Zinc\n";
+        }
+        if (BBBqty) {
+            cout << "[14] Triple Magnesium Complex\n";
+        }
+        if (BBCqty) {
+            cout << "[15] Collagen\n";
+        }
+        if (BCAqty) {
+            cout << "[16] Calcium\n";
+        }
+        if (BCBqty) {
+            cout << "[17] Magnesium\\n";
+        }
+        if (BCCqty) {
+            cout << "[18] Zinc\n";
+        }
+        if (CAAqty) {
+            cout << "[19] Plasters - 12 Strips Pack\n";
+        }
+        if (CABqty) {
+            cout << "[20] Plasters - 25 Strips Pack\n";
+        }
+        if (CACqty) {
+            cout << "[21] Plasters - 100 Strips Pack\n";
+        }
+        if (CBAqty) {
+            cout << "[22] Rubber Bandage - 2 x 5 yards\n";
+        }
+        if (CBBqty) {
+            cout << "[23] Rubber Bandage - 4 x 5 yards\n";
+        }
+        if (CBCqty) {
+            cout << "[24] Rubber Bandage - 6 x 5 yards\n";
+        }
+        if (CCAqty) {
+            cout << "[25] Cotton Balls - 100pc Pack\n";
+        }
+        if (CCBqty) {
+            cout << "[26] Cotton Buds - 200pc Pack\n";
+        }
+        if (CCCqty) {
+            cout << "[27] Cotton Rounds - 80pc Pack\n";
+        }
             case 1: // Medicine Selection
                 do {
                     system("cls");

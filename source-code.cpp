@@ -9,7 +9,7 @@ int main(int argc, char const *argv[]) {
     //declaring variables
     string name, idNumber;
     double balance, price, change, total = 0;
-    int selection, secondarySelection, tertiarySelection, seniorCondition;
+    int selection, secondarySelection, tertiarySelection, voidItem, seniorCondition;
     bool firstOperation = true;
     double AAAqty, AABqty, AACqty, ABAqty, ABBqty, ABCqty, ACAqty, ACBqty, ACCqty, BAAqty, BABqty, BACqty, BBAqty, BBBqty, BBCqty, BCAqty, BCBqty, BCCqty, CAAqty, CABqty, CACqty,CBAqty, CBBqty, CBCqty, CCAqty, CCBqty, CCCqty;
     //defining qty variables - causes issues when declared and defined on the same line
@@ -55,6 +55,11 @@ int main(int argc, char const *argv[]) {
         //assignment operation of total for shopping cart system
         total = (3.50 * AAAqty) + (8.70 * AABqty) + (20.25 * AACqty) + (18.75 * ABAqty) + (23.50 * ABBqty) + (88.73 * ABCqty) + (15.00 * ACAqty) + (8.75 * ACBqty) + (20.50 * ACCqty) + (2.00 * BAAqty) + (6.00 * BABqty) + (5.00 * BACqty) + (10.00 * BBAqty) + (12.00 * BBBqty) + (18.50 * BBCqty) + (6.00 * BCAqty) + (60.00 * BCBqty) + (7.00 * BCCqty) + (26.50 * CAAqty) + (52.50 * CABqty) + (140.00 * CACqty) + (35.50 * CBAqty) + (59.00 * CBBqty) + (82.14 * CBCqty) + (60.00 * CCAqty) + (35.00 * CCBqty) + (75.00 * CCCqty);
         system("cls");
+
+        if (!AAAqty && !AABqty && !AACqty && !ABAqty && !ABBqty && !ABCqty && !ACAqty && !ACBqty && !ACCqty && !BAAqty && !BABqty && !BACqty && !BBAqty && !BBBqty && !BBCqty && !BCAqty && !BCBqty && !BCCqty && !CAAqty && !CABqty && !CACqty &&!CBAqty && !CBBqty && !CBCqty && !CCAqty && !CCBqty && !CCCqty)
+        {
+            firstOperation=true;
+        }
 
         //top half system - live display of current purchases - cart system
         cout << "=====================================================================\n";
@@ -160,7 +165,7 @@ int main(int argc, char const *argv[]) {
             cout << "Plasters - 12 Strips Pack\t\t" << CAAqty<< "\t\t" << CAAqty * 26.50 << "\n";
         }
         if (CABqty) {
-            cout << "Plasters - 25 Strips Pack\t\t\t" << CABqty<< "\t\t" << CABqty * 52.50 << "\n";
+            cout << "Plasters - 25 Strips Pack\t\t" << CABqty<< "\t\t" << CABqty * 52.50 << "\n";
         }
         if (CACqty) {
             cout << "Plasters - 100 Strips Pack\t\t" << CACqty<< "\t\t" << CACqty * 140.00 << "\n";
@@ -201,12 +206,13 @@ int main(int argc, char const *argv[]) {
         //option update based on presence of transaction
         if (firstOperation)
         {
-            cout<<"[4] Exit\n\n";
+            cout <<"[4] Exit\n\n";
             cout << "=====================================================================\n";
         }
         else
         {
-            cout<<"[4] Confirm Purchases\n\n";
+            cout <<"[4] Confirm Purchases\n";
+            cout <<"[5] Void Item\n\n";
             cout << "=====================================================================\n";
         }
         cin >> selection;
@@ -523,9 +529,9 @@ do {
                                     cout << "=====================================================================\n";
                                     cout << "Item\t\t\t\t\t\tPrice per Item\n";
                                     cout << "=====================================================================\n\n";
-                                    cout << "[1] Multivitamin + Mineral + Folic + Zinc\tPhp. 18.75\n";
-                                    cout << "[2] Triple Magnesium Complex\t\t\tPhp. 23.50\n";
-                                    cout << "[3] Collagen\t\t\t\t\tPhp. 88.75\n";
+                                    cout << "[1] Multivitamin + Mineral + Folic + Zinc\tPhp. 10.00\n";
+                                    cout << "[2] Triple Magnesium Complex\t\t\tPhp. 12.00\n";
+                                    cout << "[3] Collagen\t\t\t\t\tPhp. 18.50\n";
                                     cout << "[4] Back\n\n";
                                     cout << "=====================================================================\n"; 
                                     cout << "Enter Number: ";cin >> tertiarySelection;
@@ -587,9 +593,9 @@ do {
                                 cout << "=====================================================================\n";
                                 cout << "Item\t\t\t\t\t\tPrice per Item\n";
                                 cout << "=====================================================================\n\n";
-                                cout << "[1] Calcium\t\t\t\t\tPhp. 15.00\n";
-                                cout << "[2] Magnesium\t\t\t\t\tPhp. 8.75\n";
-                                cout << "[3] Zinc\t\t\t\t\tPhp. 20.50\n";
+                                cout << "[1] Calcium\t\t\t\t\tPhp. 6.00\n";
+                                cout << "[2] Magnesium\t\t\t\t\tPhp. 60.00\n";
+                                cout << "[3] Zinc\t\t\t\t\tPhp. 7.00\n";
                                 cout << "[4] Back\n\n";
                                 cout << "=====================================================================\n";
                                 cout << "Enter Number: ";cin >> tertiarySelection;
@@ -855,16 +861,222 @@ do {
                             break;  //end of secondary selection
                         }
                 } while (secondarySelection<=3);
+                break;
+        case 4:
+        //redirects selection to exit
+        selection = 6;
+        break;
+        case 5:
+        //Item Void System
+        system("cls");
+        cout << "=====================================================================\n";
+        cout << "Please Select The Item You Wish to Discard:\n";
+        cout << "=====================================================================\n";
+        cout << "Item Number\t\t\t\t\t\tQuantity\n";
+        cout << "=====================================================================\n";
+        if (AAAqty) {
+            cout << "[1] Acetylsalicylic Acid (Aspirin)\t\t\t" << AAAqty  << "\n";
+        }
+        if (AABqty) {
+            cout << "[2] Ibuprofen\t\t\t\t\t\t" << AABqty << "\n";
+        }
+        if (AACqty) {
+            cout << "[3] Naproxen Sodium\t\t\t\t\t" << AACqty  << "\n";
+        }
+        if (ABAqty) {
+            cout << "[4] Amoxicillin\t\t\t\t\t\t" << ABAqty  << "\n";
+        }
+        if (ABBqty) {
+            cout << "[5] Ampicillin\t\t\t\t\t\t" << ABBqty  << "\n";
+        }
+        if (ABCqty) {
+            cout << "[6] Azithromycin\t\t\t\t\t" << ABCqty  << "\n";
+        }
+        if (ACAqty) {
+            cout << "[7] Cetirizine\t\t\t\t\t\t" << ACAqty << "\n";
+        }
+        if (ACBqty) {
+            cout << "[8] Diphenhydramine\t\t\t\t\t" << ACBqty << "\n";
+        }
+        if (ACCqty) {
+            cout << "[9] Loratadine\t\t\t\t\t\t" << ACCqty << "\n";
+        }
+        
+        //
+        //
+        // Vitamins & Supplements Vitamins
+        //
+        //
+
+        if (BAAqty) {
+            cout << "[10] Ascorbic Acid (Vitamin C)\t\t\t\t" << BAAqty << "\n";
+        }
+        if (BABqty) {
+            cout << "[11] Vitamin B - Complex\t\t\t\t" << BABqty << "\n";
+        }
+        if (BACqty) {
+            cout << "[12] Cholecalciferol (Vitamin D3)\t\t\t" << BACqty << "\n";
+        }
+
+        // Vitamins & Supplements Food & Dietary Supplements
+        
+        if (BBAqty) {
+            cout << "[13] Multivitamin + Mineral + Folic + Zinc\t\t" << BBAqty << "\n";
+        }
+        if (BBBqty) {
+            cout << "[14] Triple Magnesium Complex\t\t\t\t" << BBBqty << "\n";
+        }
+        if (BBCqty) {
+            cout << "[15] Collagen\t\t\t\t\t\t" << BBCqty << "\n";
+        }
+
+        // Vitamins & Supplements Mineral Supplements
+
+        if (BCAqty) {
+            cout << "[16] Calcium\t\t\t\t\t\t" << BCAqty << "\n";
+        }
+        if (BCBqty) {
+            cout << "[17] Magnesium\t\t\t\t\t\t" << BCBqty << "\n";
+        }
+        if (BCCqty) {
+            cout << "[18] Zinc\t\t\t\t\t\t" << BCCqty << "\n";
+        }
+        if (CAAqty) {
+            cout << "[19] Plasters - 12 Strips Pack\t\t\t\t" << CAAqty << "\n";
+        }
+        if (CABqty) {
+            cout << "[20] Plasters - 25 Strips Pack\t\t\t\t" << CABqty<< "\n";
+        }
+        if (CACqty) {
+            cout << "[21] Plasters - 100 Strips Pack\t\t\t\t" << CACqty << "\n";
+        }
+
+        // First Aid Equipment // Elastic Bandages
+
+        if (CBAqty) {
+            cout << "[22] Rubber Bandage - 2 x 5 yards\t\t\t" << CBAqty << "\n";
+        }
+        if (CBBqty) {
+            cout << "[23] Rubber Bandage - 4 x 5 yards\t\t\t" << CBBqty << "\n";
+        }
+        if (CBCqty) {
+            cout << "[24] Rubber Bandage - 6 x 5 yards\t\t\t" << CBCqty << "\n";
+        }
+
+        // First Aid Equipment // Cotton Items
+
+        if (CCAqty) {
+            cout << "[25] Cotton Balls - 100pc Pack\t\t\t\t" << CCAqty << "\n";
+        }
+        if (CCBqty) {
+            cout << "[26] Cotton Buds - 200pc Pack\t\t\t\t" << CCBqty << "\n";
+        }
+        if (CCCqty) {
+            cout << "[27] Cotton Rounds - 80pc Pack\t\t\t\t" << CCCqty << "\n";
+        }
+        cout << "=====================================================================\n";
+        cout << "Enter Number: ";
+        cin >> voidItem;
+        //switch case for item voiding
+        switch (voidItem)
+        {
+        case 1:
+            AAAqty = 0;
+            break;
+        case 2:
+            AABqty = 0;
+            break;
+        case 3:
+            AACqty = 0;
+            break;
+        case 4:
+            ABAqty = 0;
+            break;
+        case 5:
+            ABBqty = 0;
+            break;
+        case 6:
+            ABCqty = 0;
+            break;
+        case 7:
+            ACAqty = 0;
+            break;
+        case 8:
+            ACBqty = 0;
+            break;
+        case 9:
+            ACCqty = 0;
+            break;
+        case 10:
+            BAAqty = 0;
+            break;
+        case 11:
+            BABqty = 0;
+            break;
+        case 12:
+            BACqty = 0;
+            break;
+        case 13:
+            BBAqty = 0;
+            break;
+        case 14:
+            BBBqty = 0;
+            break;
+        case 15:
+            BBCqty = 0;
+            break;
+        case 16:
+            BCAqty = 0;
+            break;
+        case 17:
+            BCBqty = 0;
+            break;
+        case 18:
+            BCCqty = 0;
+            break;
+        case 19:
+            CAAqty = 0;
+            break;
+        case 20:
+            CABqty = 0;
+            break;
+        case 21:
+            CACqty = 0;
+            break;
+        case 22:
+            CBAqty = 0;
+            break;
+        case 23:
+            CBBqty = 0;
+            break;
+        case 24:
+            CBCqty = 0;
+            break;
+        case 25:
+            CCAqty = 0;
+            break; 
+        case 26:
+            CCBqty = 0;
+            break;  
+        case 27:
+            CCCqty = 0;
+            break;  
+        default:
+            break;
+        }
+        break;  //end of case 5 void item
                 default:
                     break;  //end of main case
         }
-    } while (selection <= 3); //end of switch 1
+    } while (selection <= 5); //end of switch 1
 
     //exit condition
     if (!firstOperation) {
         system("cls");
         total = (3.50 * AAAqty) + (8.70 * AABqty) + (20.25 * AACqty) + (18.75 * ABAqty) + (23.50 * ABBqty) + (88.73 * ABCqty) + (15.00 * ACAqty) + (8.75 * ACBqty) + (20.50 * ACCqty) + (2.00 * BAAqty) + (6.00 * BABqty) + (5.00 * BACqty) + (10.00 * BBAqty) + (12.00 * BBBqty) + (18.50 * BBCqty) + (6.00 * BCAqty) + (60.00 * BCBqty) + (7.00 * BCCqty) + (26.50 * CAAqty) + (52.50 * CABqty) + (140.00 * CACqty) + (35.50 * CBAqty) + (59.00 * CBBqty) + (82.14 * CBCqty) + (60.00 * CCAqty) + (35.00 * CCBqty) + (75.00 * CCCqty);
-        cout << "Review of Purchase:\n\n";
+
+        cout << "=====================================================================\n";
+        cout << "Summary of Purchases:\n\n";
         cout << "Customer Name: " <<name<<"\n";
         cout << dt <<"\n";
         cout << "=====================================================================\n";
@@ -955,7 +1167,7 @@ do {
             cout << "Plasters - 12 Strips Pack\t\t" << CAAqty<< "\t\t" << CAAqty * 26.50 << "\n";
         }
         if (CABqty) {
-            cout << "Plasters - 25 Strips Pack\t\t\t" << CABqty<< "\t\t" << CABqty * 52.50 << "\n";
+            cout << "Plasters - 25 Strips Pack\t\t" << CABqty<< "\t\t" << CABqty * 52.50 << "\n";
         }
         if (CACqty) {
             cout << "Plasters - 100 Strips Pack\t\t" << CACqty<< "\t\t" << CACqty * 140.00 << "\n";
@@ -998,6 +1210,7 @@ do {
         do
         {
         cout << "Do you have a Senior Citizen ID?\t\t[1] Yes\t[2] No\n";
+        cout << "=====================================================================\n";
         cin >> seniorCondition;
 
         switch (seniorCondition)
@@ -1008,6 +1221,7 @@ do {
         do
         {
             cout << "Please enter your Senior ID's Id No. / Card No. / Control No.:\n";
+            cout << "=====================================================================\n";
             cin >> idNumber;
             int idLength = idNumber.length();
         } while (idLength < 4 && idLength > 6); //Checks for length of string, based on typical lengths of Senior ID No.
@@ -1024,7 +1238,7 @@ do {
         break;
 
         default:
-        cout << "Invalid Input. Please Try Again."; //for input other than 1 and 2
+        cout << "Invalid Input. Please Try Again.\n"; //for input other than 1 and 2
                 break;
         }
         } while (seniorCondition<=0||seniorCondition>=3);   //loops for inputs other than 1 and 2
@@ -1033,7 +1247,7 @@ do {
         cin >> balance;
 
         while (balance <= 0 || balance < total) {
-            cout << "Invalid balance! Balance must be at least equal to the total price: ";
+            cout << "Invalid balance! Balance must be at least equal to the\ntotal price: ";
             cin >> balance;
         }
 
